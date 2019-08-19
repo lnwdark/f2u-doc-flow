@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+         Flow การสมัครบริการผ่านช่องทาง SMS ของ OPERATOR TRUEMOVE-H - HackMD
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body kbd,.popover kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;padding:0 15px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica Neue,Helvetica,Roboto,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.ui-published-note{color:#337ab7}.ui-published-note .fa{font-size:20px;vertical-align:top}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}abbr[data-original-title],abbr[title]{cursor:help}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid" data-hard-breaks="true" style="position: relative;"><h1 id="-Flow-การสมัครบริการผ่านช่องทาง-SMS-ของ-OPERATOR-TRUEMOVE-H"><a class="anchor hidden-xs" href="#-Flow-การสมัครบริการผ่านช่องทาง-SMS-ของ-OPERATOR-TRUEMOVE-H" title="-Flow-การสมัครบริการผ่านช่องทาง-SMS-ของ-OPERATOR-TRUEMOVE-H"><span class="octicon octicon-link"></span></a><i class="fa fa-file fa-fw"></i> Flow การสมัครบริการผ่านช่องทาง SMS ของ OPERATOR TRUEMOVE-H</h1><h2 id="TRUEMOVE-H"><a class="anchor hidden-xs" href="#TRUEMOVE-H" title="TRUEMOVE-H"><span class="octicon octicon-link"></span></a>TRUEMOVE-H</h2><h3 id="1-MO-เข้าที่-API-อะไร"><a class="anchor hidden-xs" href="#1-MO-เข้าที่-API-อะไร" title="1-MO-เข้าที่-API-อะไร"><span class="octicon octicon-link"></span></a>1. MO เข้าที่ API อะไร</h3><h4 id="11-URL-API-ที่ใช้รับ-MO-คืออะไร"><a class="anchor hidden-xs" href="#11-URL-API-ที่ใช้รับ-MO-คืออะไร" title="11-URL-API-ที่ใช้รับ-MO-คืออะไร"><span class="octicon octicon-link"></span></a>1.1 URL API ที่ใช้รับ MO คืออะไร</h4><blockquote>
+<p>สามารถไปดูที่ ISS ที่เครื่อง 192.168.100.111 หรือ 112</p>
+</blockquote><table id="test">
+         <tbody><tr>
+     <th>Server </th>     
+     <td>192.168.100.111 or 112</td>
+    </tr>
+          <tr>
+            <th>URL API</th>
+            <td>http://203.146.102.205:8030/f2u_turemoveh_mo.php</td>
+          </tr>
+     </tbody></table><h4 id="12-Path-ของ-API-ที่เป็นตัวรับอยู่ที่ไหน"><a class="anchor hidden-xs" href="#12-Path-ของ-API-ที่เป็นตัวรับอยู่ที่ไหน" title="12-Path-ของ-API-ที่เป็นตัวรับอยู่ที่ไหน"><span class="octicon octicon-link"></span></a>1.2 Path ของ API ที่เป็นตัวรับอยู่ที่ไหน</h4><table id="test">
+       <tbody><tr>
+     <th>Server </th>     
+     <td>192.168.100.111 or 112</td>
+    </tr>
+       <tr>
+     <th>PATH API</th>     <td>D:\inetpub\wwwroot\mcp_dev\web\truemove\htdocs\f2u_turemoveh_mo.php</td>
+    </tr>
+    <tr>
+     <th>FileName </th>     
+     <td>f2u_turemoveh_mo.php</td>
+    </tr>
+     </tbody></table><h4 id="ตัวอย่างการสมัคร-รูปแบบ-SMS"><a class="anchor hidden-xs" href="#ตัวอย่างการสมัคร-รูปแบบ-SMS" title="ตัวอย่างการสมัคร-รูปแบบ-SMS"><span class="octicon octicon-link"></span></a>ตัวอย่างการสมัคร รูปแบบ SMS</h4><table id="test">
+  <tbody><tr>
+    <th>Operator</th>
+    <td>TRUEMOVE-H</td>
+  </tr>
+   <tr>
+    <th>MSISDN</th>
+    <td>66909507733</td>
+  </tr>
+   <tr>
+    <th>Service</th>
+    <td>4761167</td>
+  </tr>
+   <tr>
+    <th>Service Name</th>
+    <td>Horo4U 22</td>
+  </tr>
+  <tr>
+    <th>Media Code</th>
+    <td>T1</td>
+  </tr>
+  <tr>
+    <th>Server IP</th>
+    <td>192.168.100.111</td>
+  </tr>
+</tbody></table><h3 id="2-สร้างไฟล์-MO-ที่-Path-ใด"><a class="anchor hidden-xs" href="#2-สร้างไฟล์-MO-ที่-Path-ใด" title="2-สร้างไฟล์-MO-ที่-Path-ใด"><span class="octicon octicon-link"></span></a>2 สร้างไฟล์ MO ที่ Path ใด</h3><blockquote>
+<p>สร้าง file MO มาสร้างที่เครื่อง 192.168.100.80</p>
+</blockquote><table id="test">
+     <tbody><tr>
+     <th>Server </th>     
+     <td>192.168.100.80</td>
+    </tr>
+    <tr>
+      <th>Path</th>
+      <td>E:\Transaction_files\M1\TRUEMOVE_DR\inbox\{service}</td>
+     </tr>
+  </tbody></table><h3 id="3-MO-นั้นมีชื่อไฟล์ว่าอะไร--ดู-log-ที่ชื่อว่าอะไร"><a class="anchor hidden-xs" href="#3-MO-นั้นมีชื่อไฟล์ว่าอะไร--ดู-log-ที่ชื่อว่าอะไร" title="3-MO-นั้นมีชื่อไฟล์ว่าอะไร--ดู-log-ที่ชื่อว่าอะไร"><span class="octicon octicon-link"></span></a>3. MO นั้นมีชื่อไฟล์ว่าอะไร + ดู log ที่ชื่อว่าอะไร</h3><table>
+  <tbody><tr>
+    <th>Path</th>
+   <td>E:\inetpub\wwwroot\mcp_dev\web\truemove\logs</td>
+  </tr>
+  <tr>
+    <th>File Name</th>
+    <td>F2U_TRUEMOVE-H_SMS_MO_2019-08-13_10_(API01)</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/QC8HvX6.png" alt=""></p><pre><code>== เอาเบอร์ไปหา เช่น 66909507733 == จะได้ตามด้านล่าง
+</code></pre><pre><code class="xml hljs">(2019-08-13 10:47:50) - ############################## NEW REQUEST FROM TRUEMOVE GW ##############################
+REMOTE_ADDR: 192.168.100.100, USER_AGENT: , SCRIPT_FILENAME: D:\inetpub\wwwroot\mcp_dev\web\truemove\htdocs\f2u_turemoveh_mo.php, PORT: 8030
+HTTP_RAW_POST_DATA: <span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"ISO-8859-1"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"routerSMSNoneNode11@TYNMAVSMSP-NONE01:2950813801"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">sms</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"mo"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">retry</span> <span class="hljs-attr">count</span>=<span class="hljs-string">"0"</span> <span class="hljs-attr">max</span>=<span class="hljs-string">"0"</span>/&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">destination</span> <span class="hljs-attr">messageid</span>=<span class="hljs-string">"8916D55A"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"abbreviated"</span>&gt;</span>4761167<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ud</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span>&gt;</span>T1<span class="hljs-tag">&lt;/<span class="hljs-name">ud</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">scts</span>&gt;</span>2019-08-13T10:47:50Z<span class="hljs-tag">&lt;/<span class="hljs-name">scts</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">service-id</span>&gt;</span>7107322304<span class="hljs-tag">&lt;/<span class="hljs-name">service-id</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sms</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">from</span>&gt;</span>RMV_NONE_RMV1<span class="hljs-tag">&lt;/<span class="hljs-name">from</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">to</span>&gt;</span>HttpAdapter::R_Future2y_7107322304<span class="hljs-tag">&lt;/<span class="hljs-name">to</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+Msg_Parsed: T1
+FilePath (Success): \\f2u-file01\transaction_files\M1\TRUEMOVE_MO\inbox\4761167/20190813104750_1565668070.8095.411_QUEUE_MO_F2U_TRUEMOVE-H_SMS_4761167_7107322304_routerSMSNoneNode11-TYNMAVSMSP-NONE01-2950813801_MNID1_4.log
+Response:
+<span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> <span class="hljs-meta">?&gt;</span></span><span class="hljs-tag">&lt;<span class="hljs-name">message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"routerSMSNoneNode11@TYNMAVSMSP-NONE01:2950813801"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">rsr</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"reply"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">service-id</span>&gt;</span>7107322304<span class="hljs-tag">&lt;/<span class="hljs-name">service-id</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">destination</span> <span class="hljs-attr">messageid</span>=<span class="hljs-string">"8916D55A"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"abbreviated"</span>&gt;</span>4761167<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">rsr_detail</span> <span class="hljs-attr">status</span>=<span class="hljs-string">"success"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>0<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>Success receive request<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rsr_detail</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rsr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+Process time: 0.0112
+</code></pre><h3 id="4-MO-ถูกขียนไฟล์ที่-Folder-อะไร"><a class="anchor hidden-xs" href="#4-MO-ถูกขียนไฟล์ที่-Folder-อะไร" title="4-MO-ถูกขียนไฟล์ที่-Folder-อะไร"><span class="octicon octicon-link"></span></a>4. MO ถูกขียนไฟล์ที่ Folder อะไร</h3><blockquote>
+<p>file MO จะถูกเขียนที่ Folder Inbox ก่อนหลังจากทำงานเสร็จ จะถูกย้ายมาเก็บที่ history</p>
+</blockquote><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.80</td>
+  </tr>
+ </tbody></table><p>== Step 1 ==</p><table>
+<tbody><tr>
+  </tr>
+  <tr>
+    <th>Path</th>
+   <td>E:\Transaction_files\M1\TRUEMOVE_MO\Inbox\20190813\4761167</td>
+  </tr>
+   <tr>
+    <th>File Name</th>
+    <td>20190813104750_1565668070.8095.411_QUEUE_MO_F2U_TRUEMOVE-H_SMS_4761167_7107322304_ROUTERSMSNONENODE11-TYNMAVSMSP-NONE01-2950813801_MNID1_4_(API01)</td>
+  </tr>
+</tbody></table><p>== Step 2 ==</p><table>
+
+</table><table>
+  <tbody><tr>
+    <th>Path</th>
+   <td>E:\Transaction_files\M1\TRUEMOVE_MO\history\20190813\4761167</td>
+  </tr>
+  <tr>
+    <th>File Name</th>
+    <td>20190813104750_1565668070.8095.411_QUEUE_MO_F2U_TRUEMOVE-H_SMS_4761167_7107322304_ROUTERSMSNONENODE11-TYNMAVSMSP-NONE01-2950813801_MNID1_4_(API01)</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/QnKgc6n.png" alt=""><br>
+<img src="https://i.imgur.com/qrrwELk.png" alt=""></p><pre><code> #### ตัวอย่างข้อมูลไฟล์ที่ได้ #### 
+</code></pre><pre><code class="Json hljs">CMD<span class="hljs-params">|MSISDN|</span>OPERATORCUSTOMERID<span class="hljs-params">|IDOPERATOR|</span>OPERATORSUBSCRIBERTYPE<span class="hljs-params">|MOMSG|</span>MOUNICODE<span class="hljs-params">|MOSNO|</span>OPERATORSERVICEID<span class="hljs-params">|OPERATORPRODUCTID|</span>MOREFID1<span class="hljs-params">|MOREFID2|</span>IDMOMESSAGECHANNEL<span class="hljs-params">|IDMOGATEWAY|</span>ISVIRTUAL<span class="hljs-params">|MTREFID|</span>IDEMPLOYEE<span class="hljs-params">|DROPERATORTYPE|</span>DROPERATORCODE<span class="hljs-params">|DROPERATORSTATUS|</span>DROPERATORDESCRIPTION<span class="hljs-params">|RECEIVEDDATETIME|</span>PARTNERREFID<span class="hljs-params">|IDMOPARTNERRESPONSESTATUS|</span>
+MO<span class="hljs-params">|66909507733|</span><span class="hljs-params">|6|</span><span class="hljs-number">0</span><span class="hljs-params">|T1|</span><span class="hljs-number">0</span><span class="hljs-params">|4761167|</span><span class="hljs-number">7107322304</span><span class="hljs-params">||</span>routerSMSNoneNode11@TYNMAVSMSP-<span class="hljs-symbol">NONE01:</span><span class="hljs-number">2950813801</span><span class="hljs-params">||</span><span class="hljs-number">2</span><span class="hljs-params">|6|</span><span class="hljs-number">0</span><span class="hljs-params">||</span><span class="hljs-number">0</span><span class="hljs-params">||</span><span class="hljs-params">||</span><span class="hljs-params">|2019-08-13 10:47:50|</span><span class="hljs-params">||</span>
+
+</code></pre><h3 id="5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน"><a class="anchor hidden-xs" href="#5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน" title="5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน"><span class="octicon octicon-link"></span></a>5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน</h3><div class="alert alert-info">
+<p>เมื่อมี App ชื่อ <strong>BROKER_MO_TRUEMOVE</strong> มาดึงไฟล์ MO ไปทำงานต่อ ดังนั้นข้อมูล MO จะถูก Insert เข้าที่ตาราง <strong>MCP_DEV.dbo.TempImportMoTransactionBuffer</strong> และ  <strong>idUpdateMoHandleStatus = 0</strong></p>
+</div><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.151 (dotNet)</td>
+  </tr>
+  <tr>
+    <th>App Name</th>
+    <td>BROKER_MO_TRUEMOVE</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/0qxXBiE.png" alt=""></p><div class="alert alert-info">
+<p>Step2 หลังจากนั้น JOB ที่ชื่อว่า <strong>JOB_BROKERMO_MOVE_MOTRANSACTION_FROM_BUFFER_TO_QUEUE</strong> ย้ายข้อมูลจาก ตาราง <strong>MCP_DEV.dbo.TempImportMoTransactionBuffer</strong> ที่มี <strong>idUpdateMoHandleStatus = 0</strong> ไปที่ ตาราง <strong>MCP_DEV.dbo.TempImportMoTransactionQueue</strong> เพื่อทำ process ต่อไป</p>
+</div><table>
+<tbody><tr>
+    <th>DB Server</th>
+   <td>192.168.100.40\MCP </td>
+  </tr>
+  <tr>
+    <th>Job Name</th>
+    <td>JOB_BROKERMO_MOVE_MOTRANSACTION_FROM_BUFFER_TO_QUEUE</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/ncsPRjG.png" alt=""></p><div class="alert alert-success">
+<p>วิธีดู log file BROKER_MO_TRUEMOVE ว่ามีการทำงานได้หรือป่าว</p>
+</div><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.151 (dotNet)</td>
+  </tr>
+  <tr>
+    <th>Path</th>
+   <td>E:\f2u\logs\broker_mo_truemove\archives</td>
+  </tr>
+  <tr>
+    <th>File Name</th>
+    <td>BROKER_MO_TRUEMOVE_EVENT_2019-08-13_10_(APPNET01)</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/VL2cq8I.png" alt=""></p><h3 id="6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE"><a class="anchor hidden-xs" href="#6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE" title="6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE"><span class="octicon octicon-link"></span></a>6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE</h3><div class="alert alert-info">
+<p>App dotNet(เครื่อง 192.168.100.151) ชื่อ <strong>RUN_BROKER_MO_TRUEMOVE</strong> ทำการ execute Stored  ที่ชื่อว่า <strong>SP_BROKERMO_CREATE_MO_FOR_MOTRANSACTION_BY_MANAGEMENT</strong> เพื่อทำการดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง <strong>MCP_DEV.dbo.TBMESSAGERECEIVE</strong> สำเร็จแล้ว จะกลับมา update ตาราง <strong>MCP_DEV.dbo.TempImportMoTransactionQueue</strong> ให้ <strong>idUpdateMoHandleStatus = 2</strong> (done)</p>
+</div><blockquote>
+<p>App Task Scheduler</p>
+</blockquote><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.151 (dotNet)</td>
+  </tr>
+  <tr>
+    <th>App Name</th>
+   <td>RUN_BROKER_MO_TRUEMOVE</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/1ez63YT.png" alt=""></p><blockquote>
+<p>File Stored Procedures</p>
+</blockquote><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.42 (server db)</td>
+  </tr>
+  <tr>
+    <th>Name Stored Procedures</th>
+   <td>SP_BROKERMO_CREATE_MO_FOR_MOTRANSACTION_BY_MANAGEMENT</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/3qFQ03Y.png" alt=""></p><blockquote>
+<p>ดู log การนำข้อมูลเข้า จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง MCP_DEV.dbo.TBMESSAGERECEIVE</p>
+</blockquote><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.151 (dotNet)</td>
+  </tr>
+  <tr>
+    <th>Path</th>
+   <td>E:\f2u\logs\broker_mo_truemove\archives</td>
+  </tr>
+    <tr>
+    <th>FileName</th>
+   <td>BROKER_MO_TRUEMOVE_DATABASE_2019-08-13_(APPNET01)</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/4oMDZrr.png" alt=""></p><h3 id="7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด"><a class="anchor hidden-xs" href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด"><span class="octicon octicon-link"></span></a>7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</h3><div class="alert alert-info">
+<p>jobName ที่ชื่อว่า <strong>JOB_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY (Truemove - SMS/MMS)</strong><br>
+ดึงจากตาราง <strong>MCP_DEV.dbo.TBMESSAGERECEIVE</strong> เพื่อเช็คข้อมูลว่าเป็นสมาชิกอยู่ หรือไม่ (เคสนี้เป็นการสมัครด้วยสำเร็จ)สมาชิกจะถูก insert เข้าตาราง <strong>MCP_DEV.dbo.TBSUBSCRIBER</strong> และ  gen ข้อความตอบกลับ<br>
+ไปยัง Oprator  ที่ตาราง <strong>MCP_DEV.dbo.TBMESSAGEREDUCEQUEUE</strong> โดยเปลี่ยน IDOPERATORHANDLESTATUS = 0 และ Update Mo ที่ตาราง <strong>MCP_DEV.dbo.TBMESSAGERECEIVE</strong> โดยมี IDHANDLESTATUS = 2</p>
+</div><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.42 (Server db)</td>
+  </tr>
+  <tr>
+    <th>Job Name</th>
+   <td>JOB_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY (Truemove - SMS/MMS)</td>
+   </tr>
+</tbody></table><p><img src="https://i.imgur.com/djwt8de.png" alt=""></p><h3 id="8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator0"><a class="anchor hidden-xs" href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator0" title="8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator0"><span class="octicon octicon-link"></span></a>8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</h3><blockquote>
+<p>App Task Scheduler</p>
+</blockquote><table>
+<tbody><tr>
+    <th>Server</th>
+   <td>192.168.100.142  (MT Sender php)</td>
+  </tr>
+  <tr>
+    <th>App Name</th>
+   <td>Run Service MT Sender TRUEMOVE Transaction</td>
+   </tr>
+</tbody></table><p><img src="https://i.imgur.com/BXoHWh0.png" alt=""></p><blockquote>
+<p>วิธีดู log path file ว่าอยู่ที่ไหน</p>
+</blockquote><table>
+    <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.142 (MT Sender php)</td>
+  </tr>
+  <tr>
+  <th>Path</th>
+   <td>E:\inetpub\wwwroot\mcp_dev_2018\php_cli\logs</td>
+  </tr>
+   <tr>
+  <th>File Name</th>
+   <td>SMSSENDER_MT_TRUE_WITH_HTTP_KEEP_ALIVE_TRANSACTION_SERVICE_ALC_2019-08-13_(APPS01)</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/EELH3tZ.png" alt=""></p><p>8.1   Log การส่ง MT เป็นแบบไหน</p><pre><code class="xml hljs">************************ NEW POST MT ManagementID: 1 (ALC - POST Loop: 1) ************************
+IDMessage: 3112110558679
+IDServiceProcess: 20
+MSISDN: 66909507733
+MTMESSAGE(Orig): ขอบคุณที่สมัครบริการ Horo4U 22 (3บ./ข้อความ) สอบถาม 021067474 9:00-18:00ทุกวัน ยกเลิกกด *137 โทรออก
+MTURL(Orig): 
+MTUNICODE(Orig): 1
+URL (POST): http://119.46.177.98:55000/
+Username: 2102579200, Password: XLsa58PC
+HTTP-Package: POST / HTTP/1.1
+Host: 119.46.177.98:55000
+Authorization: Basic MjEwMjU3OTIwMDpYTHNhNThQQw==
+Content-type: text/xml
+Charset: TIS-620
+Content-length: 537
+Connection: Close
+
+<span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"TIS-620"</span><span class="hljs-meta">?&gt;</span></span><span class="hljs-tag">&lt;<span class="hljs-name">message</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">sms</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"mt"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">service-id</span>&gt;</span>2102579200<span class="hljs-tag">&lt;/<span class="hljs-name">service-id</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"abbreviated"</span>&gt;</span>4761167<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">originate</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">originate</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ud</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">encoding</span>=<span class="hljs-string">"TIS-620"</span>&gt;</span>Íڤسؕ鋁ѤúĔàHoro4U 22 (3ڮ/éͤȒi ˍڶӁ 021067474 9:00-18:00ؘѹ ¡ᆔaԠ*137 ⸃΍|/ud&gt;<span class="hljs-tag">&lt;<span class="hljs-name">stcs</span>&gt;</span>2019-08-13T10:48:10+07:00<span class="hljs-tag">&lt;/<span class="hljs-name">stcs</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">dro</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">dro</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sms</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+
+************************ MT Response ManagementID: 1 (Res Loop: 1) ************************
+POST Time: 0.112
+_myfp: Resource id #8465
+Response: HTTP/1.1 202 Accepted
+Content-Length: 439
+Content-Type: text/xml
+
+<span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"ISO-8859-1"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"15656680903954519"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">rsr</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ack"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">service-id</span>&gt;</span>2102579200<span class="hljs-tag">&lt;/<span class="hljs-name">service-id</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">destination</span> <span class="hljs-attr">messageid</span>=<span class="hljs-string">"15656680903954519"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"abbreviated"</span>&gt;</span>4761167<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">rsr_detail</span> <span class="hljs-attr">status</span>=<span class="hljs-string">"success"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>000<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rsr_detail</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rsr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+-------------------------- ALC - Response[1][0] --------------------------
+POST IDMESSAGE[1][0]: 3112110558679
+POST MSISDN[1][0]: 66909507733
+RES MSISDN[1][0]: 66909507733
+sno[1][0]: 4761167
+service_id[1][0]: 2102579200
+message_id[1][0]: 15656680903954519
+rsr_status[1][0]: success
+rsr_code[1][0]: 000
+rsr_description[1][0]: success
+Sqlsrv: MsgUpdate - Query success.
+Sqlsrv: MsgUpdate - Rowcount = 0
+Sqlsrv: MsgUpdate - Time: 0.0014
+Sub Process Time: 0.1136
+All Process Time: 0.1176
+(2019-08-13 10:48:10.608730) - Database connected: 2019-08-13 10:48:10
+db_errorcode: 00000
+db_errorinfo: 
+</code></pre><blockquote>
+<p>ถ้าต้องการส่ง Mail หา Operator ส่งข้อมูลตัวอย่าง ด่านล่าง</p>
+</blockquote><pre><code class="xml hljs">************************ NEW POST MT ManagementID: 1 (ALC - POST Loop: 1) ************************
+
+URL (POST): http://119.46.177.98:55000/
+Username: 2102579200, Password: XLsa58PC
+HTTP-Package: POST / HTTP/1.1
+Host: 119.46.177.98:55000
+Authorization: Basic MjEwMjU3OTIwMDpYTHNhNThQQw==
+Content-type: text/xml
+Charset: TIS-620
+Content-length: 537
+Connection: Close
+
+<span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"TIS-620"</span><span class="hljs-meta">?&gt;</span></span><span class="hljs-tag">&lt;<span class="hljs-name">message</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">sms</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"mt"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">service-id</span>&gt;</span>2102579200<span class="hljs-tag">&lt;/<span class="hljs-name">service-id</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"abbreviated"</span>&gt;</span>4761167<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">originate</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">originate</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">ud</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">encoding</span>=<span class="hljs-string">"TIS-620"</span>&gt;</span>Íڤسؕ鋁ѤúĔàHoro4U 22 (3ڮ/éͤȒi ˍڶӁ 021067474 9:00-18:00ؘѹ ¡ᆔaԠ*137 ⸃΍|/ud&gt;<span class="hljs-tag">&lt;<span class="hljs-name">stcs</span>&gt;</span>2019-08-13T10:48:10+07:00<span class="hljs-tag">&lt;/<span class="hljs-name">stcs</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">dro</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">dro</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">sms</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+
+************************ MT Response ManagementID: 1 (Res Loop: 1) ************************
+POST Time: 0.112
+_myfp: Resource id #8465
+Response: HTTP/1.1 202 Accepted
+Content-Length: 439
+Content-Type: text/xml
+
+<span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span> encoding=<span class="hljs-string">"ISO-8859-1"</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">message</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"15656680903954519"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">rsr</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"ack"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">service-id</span>&gt;</span>2102579200<span class="hljs-tag">&lt;/<span class="hljs-name">service-id</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">destination</span> <span class="hljs-attr">messageid</span>=<span class="hljs-string">"15656680903954519"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"international"</span>&gt;</span>66909507733<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">destination</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">number</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"abbreviated"</span>&gt;</span>4761167<span class="hljs-tag">&lt;/<span class="hljs-name">number</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">address</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">source</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">rsr_detail</span> <span class="hljs-attr">status</span>=<span class="hljs-string">"success"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">code</span>&gt;</span>000<span class="hljs-tag">&lt;/<span class="hljs-name">code</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">description</span>&gt;</span>success<span class="hljs-tag">&lt;/<span class="hljs-name">description</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rsr_detail</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">rsr</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">message</span>&gt;</span>
+-------------------------- ALC - Response[1][0] --------------------------
+Sqlsrv: MsgUpdate - Query success.
+Sqlsrv: MsgUpdate - Rowcount = 0
+Sqlsrv: MsgUpdate - Time: 0.0014
+Sub Process Time: 0.1136
+All Process Time: 0.1176
+</code></pre><h3 id="9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด"><a class="anchor hidden-xs" href="#9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด" title="9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด"><span class="octicon octicon-link"></span></a>9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด</h3><blockquote>
+<p>Operator มีการส่ง DR มาให้ Future2you หรือไม่ ?<br>
+ตอบ มีครับใช้ api <a href="http://203.146.102.205:6504/truemoveh.php" target="_blank" rel="noopener">http://203.146.102.205:6504/truemoveh.php</a> ในการรับ dr จาก Operator</p>
+</blockquote><h4 id="91-URL-API-ตัวรับ-DR"><a class="anchor hidden-xs" href="#91-URL-API-ตัวรับ-DR" title="91-URL-API-ตัวรับ-DR"><span class="octicon octicon-link"></span></a>9.1 URL API ตัวรับ DR</h4><blockquote>
+<p>ใช้ IIS</p>
+</blockquote><table>
+  <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.111 or 112 </td>
+  </tr>
+  <tr>
+  <th>URL API</th>
+   <td>http://203.146.102.205:6504/truemoveh.php </td>
+  </tr>
+</tbody></table><h4 id="92-Path-API-DR-อยู่ที่ใด"><a class="anchor hidden-xs" href="#92-Path-API-DR-อยู่ที่ใด" title="92-Path-API-DR-อยู่ที่ใด"><span class="octicon octicon-link"></span></a>9.2  Path API DR อยู่ที่ใด</h4><table>
+  <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.111 or 112 </td>
+  </tr>
+  <tr>
+  <th>Path</th>
+  <td>D:\inetpub\wwwroot\mcp_dev\web\truemove\htdocs\truemoveh.php</td>
+  </tr>
+   <tr>
+   <th>File Name</th>
+   <td>truemoveh.php</td>
+  </tr>
+</tbody></table><h4 id="93-Log-อยู่ที่ใด"><a class="anchor hidden-xs" href="#93-Log-อยู่ที่ใด" title="93-Log-อยู่ที่ใด"><span class="octicon octicon-link"></span></a>9.3 Log  อยู่ที่ใด</h4><table>
+  <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.111 or 112</td>
+  </tr>
+  <tr>
+  <th>Path</th>
+  <td>E:\inetpub\wwwroot\mcp_dev\web\truemove\logs</td>
+   </tr>
+</tbody></table><h4 id="94-Log-มีข้อมูลอย่างไร"><a class="anchor hidden-xs" href="#94-Log-มีข้อมูลอย่างไร" title="94-Log-มีข้อมูลอย่างไร"><span class="octicon octicon-link"></span></a>9.4  Log มีข้อมูลอย่างไร</h4><table>
+  <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.111 or 112 </td>
+  </tr>
+  <tr>
+  <th>Path </th>
+   <td>E:\inetpub\wwwroot\mcp_dev\web\truemove\logs </td>
+  </tr>
+  <tr>
+  <th>File Name</th>
+   <td>F2U_TRUEMOVE-H_SMS_DR_2019-08-13_10_(API01) </td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/5Cg8h8K.png" alt=""></p><pre><code class="json hljs">(<span class="token number">2019</span>-<span class="token number">08</span>-<span class="token number">13</span> <span class="token number">10</span><span class="token operator">:</span><span class="token number">48</span><span class="token operator">:</span><span class="token number">10</span><span class="token punctuation">)</span> - ############################## NEW REQUEST FROM TRUEMOVE GW ##############################
+REMOTE_ADDR<span class="token operator">:</span> <span class="token number">192.168</span><span class="token number">.100</span><span class="token number">.100</span><span class="token punctuation">,</span> USER_AGENT<span class="token operator">:</span> <span class="token punctuation">,</span> SCRIPT_FILENAME<span class="token operator">:</span> D<span class="token operator">:</span>\inetpub\wwwroot\mcp_dev\web\truemove\htdocs\truemoveh.php<span class="token punctuation">,</span> PORT<span class="token operator">:</span> <span class="token number">6504</span>
+HTTP_RAW_POST_DATA<span class="token operator">:</span> &lt;?xml version=<span class="token string">"1.0"</span> encoding=<span class="token string">"ISO-8859-1"</span>?&gt;
+&lt;message id=<span class="token string">"15656680903954519"</span>&gt;&lt;rsr type=<span class="token string">"sent"</span>&gt;
+&lt;service-id&gt;<span class="token number">2102579200</span>&lt;/service-id&gt;&lt;destination&gt;&lt;address&gt;&lt;number type=<span class="token string">"international"</span>&gt;<span class="token number">66909507733</span>&lt;/number&gt;&lt;/address&gt;&lt;/destination&gt;&lt;source&gt;&lt;address&gt;&lt;number type=<span class="token string">"abbreviated"</span>&gt;<span class="token number">4761167</span>&lt;/number&gt;&lt;/address&gt;&lt;/source&gt;&lt;rsr_detail status=<span class="token string">"success"</span>&gt;&lt;description&gt;Message acknowledged by SMSC&lt;/description&gt;&lt;code&gt;<span class="token number">000</span>&lt;/code&gt;&lt;/rsr_detail&gt;&lt;/rsr&gt;&lt;/message&gt;
+FilePath (Success<span class="token punctuation">)</span><span class="token operator">:</span> \\f2u-file01\transaction_files_ssd\M1\TRUEMOVE_DR\inbox\<span class="token number">4761167</span>/<span class="token number">20190813104810</span>_1565668090.<span class="token number">544.558</span>_F2U_DR_TRANSACTION_TRUEMOVE-H_SMS_4761167_15656680903954519_MNID1_15.log
+Response<span class="token operator">:</span>
+
+Process time<span class="token operator">:</span> <span class="token number">0.0072</span>
+
+
+&gt; วิธีเช็คว่าได้ DR กลับมาหรือป่าว ดู id &lt;message id=<span class="token string">"15656680903954519"</span>&gt;&lt;rsr type=<span class="token string">"sent"</span>&gt; เช่น <span class="token number">15656680903954519</span>
+```sql
+select * from MCP_DEV.dbo.TBMESSAGEREDUCESENT td 
+INNER JOIN MCP_DEV.dbo.TBMESSAGEREDUCEINFOSENT tsd ON td.IDMESSAGEINFO = tsd.IDMESSAGEINFO
+WHERE td.MTREFID ='<span class="token number">15656680903954519</span>'  ORDER BY td.CREATEDDATETIME desc
+
+</code></pre><p><img src="https://i.imgur.com/kPkA2Y8.png" alt=""></p><h4 id="95-DR-ถูกสร้างไปไว้ที่ใด"><a class="anchor hidden-xs" href="#95-DR-ถูกสร้างไปไว้ที่ใด" title="95-DR-ถูกสร้างไปไว้ที่ใด"><span class="octicon octicon-link"></span></a>9.5 DR ถูกสร้างไปไว้ที่ใด</h4><table>
+  <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.80</td>
+  </tr>
+  <tr>
+  <th>Path </th>
+   <td>F:\Transaction_files_ssd\M1\TRUEMOVE_DR\inbox\{service_number}</td>
+  </tr>
+  <tr>
+  <th>FileName</th>
+   <td>20190813104810_1565668090.544.558_F2U_DR_TRANSACTION_TRUEMOVE-H_SMS_4761167_15656680903954519_MNID1_15.log </td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/11kPRMB.png" alt=""></p><blockquote>
+<p>ข้อมูลใน file</p>
+</blockquote><pre><code class="json hljs">CMD|MSISDN|OPERATORCUSTOMERID|IDOPERATOR|OPERATORSUBSCRIBERTYPE|MOMSG|MOUNICODE|MOSNO|OPERATORSERVICEID|OPERATORPRODUCTID|MOREFID1|MOREFID2|IDMOMESSAGECHANNEL|IDMOGATEWAY|ISVIRTUAL|MTREFID|IDEMPLOYEE|DROPERATORTYPE|DROPERATORCODE|DROPERATORSTATUS|DROPERATORDESCRIPTION|RECEIVEDDATETIME|PARTNERREFID|IDMOPARTNERRESPONSESTATUS|
+MO|<span class="token number">66909507733</span>||<span class="token number">6</span>|<span class="token number">0</span>|T1|<span class="token number">0</span>|<span class="token number">4761167</span>|<span class="token number">7107322304</span>||routerSMSNoneNode11@TYNMAVSMSP-NONE01<span class="token operator">:</span><span class="token number">2950813801</span>||<span class="token number">2</span>|<span class="token number">6</span>|<span class="token number">0</span>||<span class="token number">0</span>|||||<span class="token number">2019</span>-<span class="token number">08</span>-<span class="token number">13</span> <span class="token number">10</span><span class="token operator">:</span><span class="token number">47</span><span class="token operator">:</span><span class="token number">50</span>|||
+
+</code></pre><h3 id="10App-ใดทำหน้าที่ดึงข้อมูลจากไฟล์-DR-เข้า-Database-ข้อมูล-DR-ถูกสร้างเข้าที่ตารางใด"><a class="anchor hidden-xs" href="#10App-ใดทำหน้าที่ดึงข้อมูลจากไฟล์-DR-เข้า-Database-ข้อมูล-DR-ถูกสร้างเข้าที่ตารางใด" title="10App-ใดทำหน้าที่ดึงข้อมูลจากไฟล์-DR-เข้า-Database-ข้อมูล-DR-ถูกสร้างเข้าที่ตารางใด"><span class="octicon octicon-link"></span></a>10.App ใดทำหน้าที่ดึงข้อมูลจากไฟล์ DR เข้า Database /ข้อมูล DR ถูกสร้างเข้าที่ตารางใด</h3><div class="alert alert-info">
+<ol>
+<li>AppName <strong>F2U.App.MessageBroker</strong> run โดย Task ที่ชื่อว่า <strong>RUN_BROKER_DR_TRUEMOVE</strong> จะไปดึงข้อมูลไฟล์ DR มา insert เข้าที่ตาราง <strong>MCP_DEV.dbo.TempImportDrTransactionTruemoveBuffer</strong> และ  <strong>idUpdateDrHandleStatus = 0</strong></li>
+</ol>
+</div><table>
+  <tbody><tr>
+  <th>Server</th>
+   <td>192.168.100.151 or 152 (dotNet) </td>
+  </tr>
+  <tr>
+  <th>Task Name </th>
+   <td>RUN_BROKER_DR_TRUEMOVE</td>
+  </tr>
+   <tr>
+  <th>App Name </th>
+   <td>F2U.App.MessageBroker</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/FBjfHC6.png" alt=""></p><div class="alert alert-info">
+<ol start="2">
+<li>JobName <strong>JOB_BROKERDR_MOVE_DRTRANSACTION_TRUEMOVE_FROM_BUFFER_TO_QUEUE</strong> ทำการ execute sp ที่ชื่อ <strong>SP_BROKERDR_MOVE_DRTRANSACTION_TRUEMOVE_FROM_BUFFER_TO_QUEUE</strong><br>
+เพื่อย้ายข้อมูล จากตาราง <strong>TempImportDrTransactionTruemoveBuffer</strong> มาที่ตาราง <strong>TempImportDrTransactionTruemoveQueue</strong></li>
+</ol>
+</div><table>
+  <tbody><tr>
+  <th>DB Server</th>
+   <td>192.168.100.40\MCP</td>
+  </tr>
+  <tr>
+  <th>JobName </th>
+   <td>JOB_BROKERDR_MOVE_DRTRANSACTION_TRUEMOVE_FROM_BUFFER_TO_QUEUE</td>
+  </tr>
+   <tr>
+  <th> Stored Name</th>
+<td>SP_BROKERDR_MOVE_DRTRANSACTION_TRUEMOVE_FROM_BUFFER_TO_QUEUE</td>
+  </tr>
+</tbody></table><blockquote>
+<p>Job</p>
+</blockquote><p><img src="https://i.imgur.com/ZAMrJDm.png" alt=""></p><blockquote>
+<p>Stored<br>
+<img src="https://i.imgur.com/7OIyhOi.png" alt=""></p>
+</blockquote><h3 id="11-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job-ชื่อว่าอะไร--ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT--ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร"><a class="anchor hidden-xs" href="#11-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job-ชื่อว่าอะไร--ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT--ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร" title="11-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job-ชื่อว่าอะไร--ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT--ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร"><span class="octicon octicon-link"></span></a>11. DR ในตารางถูกนำไป Update MT ด้วย App หรือ Job ชื่อว่าอะไร / ใช้เงื่อนไขใดในการนำ DR ไปอัพเดท MT / ข้อมูล MT หลังจากถูกอัพเดท DR เป็นอย่างไร</h3><h4 id="111-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job"><a class="anchor hidden-xs" href="#111-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job" title="111-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job"><span class="octicon octicon-link"></span></a>11.1 DR ในตารางถูกนำไป Update MT ด้วย App หรือ Job</h4><table>
+  <tbody><tr>
+  <th>DB Server</th>
+   <td>192.168.100.40\MCP </td>
+  </tr>
+  <tr>
+  <th>App Name </th>
+   <td>
+   F2U.App.MessageBroker
+   </td>
+  </tr>
+  <tr>
+  <th>Task Name </th>
+   <td>RUN_BROKER_DR_TRUEMOVE</td>
+  </tr>
+   <tr>
+  <th> Stored Name</th>
+  <td>SP_BROKERDR_UPDATE_MT_FOR_DRTRANSACTION_TRUEMOVE_BY_MANAGEMENT</td>
+  </tr>
+</tbody></table><p><img src="https://i.imgur.com/HJL9O7g.png" alt=""></p><h4 id="112-ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT"><a class="anchor hidden-xs" href="#112-ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT" title="112-ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT"><span class="octicon octicon-link"></span></a>11.2 ใช้เงื่อนไขใดในการนำ DR ไปอัพเดท MT</h4><div class="alert alert-info">
+<p>การหาข้อมูลจาก <strong>MSISDN</strong> และ <strong>MTREFID</strong> ไป Update ที่ ตาราง <strong>TBMESSAGEREDUCESENT</strong></p>
+</div><h5 id="113-ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร"><a class="anchor hidden-xs" href="#113-ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร" title="113-ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร"><span class="octicon octicon-link"></span></a>11.3 ข้อมูล MT หลังจากถูกอัพเดท DR เป็นอย่างไร</h5><div class="alert alert-info">
+<p>จะ Update column <strong>{DROPERATORRESPONSETEXT,IDDROPERATORRESPONSESTATUS,DRRECEIVEDATETIME,UPDATEDDATETIME}</strong> ในตาราง <strong>TBMESSAGEREDUCESENT</strong></p>
+</div><p><img src="https://i.imgur.com/ghvNqQC.png" alt=""></p></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#-Flow-การสมัครบริการผ่านช่องทาง-SMS-ของ-OPERATOR-TRUEMOVE-H" title=" Flow การสมัครบริการผ่านช่องทาง SMS ของ OPERATOR TRUEMOVE-H"> Flow การสมัครบริการผ่านช่องทาง SMS ของ OPERATOR TRUEMOVE-H</a><ul class="nav">
+<li class=""><a href="#TRUEMOVE-H" title="TRUEMOVE-H">TRUEMOVE-H</a><ul class="nav">
+<li class=""><a href="#1-MO-เข้าที่-API-อะไร" title="1. MO เข้าที่ API อะไร">1. MO เข้าที่ API อะไร</a></li>
+<li class=""><a href="#2-สร้างไฟล์-MO-ที่-Path-ใด" title="2 สร้างไฟล์ MO ที่ Path ใด">2 สร้างไฟล์ MO ที่ Path ใด</a></li>
+<li class=""><a href="#3-MO-นั้นมีชื่อไฟล์ว่าอะไร--ดู-log-ที่ชื่อว่าอะไร" title="3. MO นั้นมีชื่อไฟล์ว่าอะไร + ดู log ที่ชื่อว่าอะไร">3. MO นั้นมีชื่อไฟล์ว่าอะไร + ดู log ที่ชื่อว่าอะไร</a></li>
+<li class=""><a href="#4-MO-ถูกขียนไฟล์ที่-Folder-อะไร" title="4. MO ถูกขียนไฟล์ที่ Folder อะไร">4. MO ถูกขียนไฟล์ที่ Folder อะไร</a></li>
+<li class=""><a href="#5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน" title="5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน">5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน</a></li>
+<li><a href="#6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE" title="6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE">6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE</a></li>
+<li><a href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด">7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</a></li>
+<li class=""><a href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator0" title="8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator">8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</a></li>
+<li><a href="#9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด" title="9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด">9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด</a></li>
+<li><a href="#10App-ใดทำหน้าที่ดึงข้อมูลจากไฟล์-DR-เข้า-Database-ข้อมูล-DR-ถูกสร้างเข้าที่ตารางใด" title="10.App ใดทำหน้าที่ดึงข้อมูลจากไฟล์ DR เข้า Database /ข้อมูล DR ถูกสร้างเข้าที่ตารางใด">10.App ใดทำหน้าที่ดึงข้อมูลจากไฟล์ DR เข้า Database /ข้อมูล DR ถูกสร้างเข้าที่ตารางใด</a></li>
+<li class=""><a href="#11-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job-ชื่อว่าอะไร--ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT--ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร" title="11. DR ในตารางถูกนำไป Update MT ด้วย App หรือ Job ชื่อว่าอะไร / ใช้เงื่อนไขใดในการนำ DR ไปอัพเดท MT / ข้อมูล MT หลังจากถูกอัพเดท DR เป็นอย่างไร">11. DR ในตารางถูกนำไป Update MT ด้วย App หรือ Job ชื่อว่าอะไร / ใช้เงื่อนไขใดในการนำ DR ไปอัพเดท MT / ข้อมูล MT หลังจากถูกอัพเดท DR เป็นอย่างไร</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#-Flow-การสมัครบริการผ่านช่องทาง-SMS-ของ-OPERATOR-TRUEMOVE-H" title=" Flow การสมัครบริการผ่านช่องทาง SMS ของ OPERATOR TRUEMOVE-H"> Flow การสมัครบริการผ่านช่องทาง SMS ของ OPERATOR TRUEMOVE-H</a><ul class="nav">
+<li class=""><a href="#TRUEMOVE-H" title="TRUEMOVE-H">TRUEMOVE-H</a><ul class="nav">
+<li class=""><a href="#1-MO-เข้าที่-API-อะไร" title="1. MO เข้าที่ API อะไร">1. MO เข้าที่ API อะไร</a></li>
+<li class=""><a href="#2-สร้างไฟล์-MO-ที่-Path-ใด" title="2 สร้างไฟล์ MO ที่ Path ใด">2 สร้างไฟล์ MO ที่ Path ใด</a></li>
+<li class=""><a href="#3-MO-นั้นมีชื่อไฟล์ว่าอะไร--ดู-log-ที่ชื่อว่าอะไร" title="3. MO นั้นมีชื่อไฟล์ว่าอะไร + ดู log ที่ชื่อว่าอะไร">3. MO นั้นมีชื่อไฟล์ว่าอะไร + ดู log ที่ชื่อว่าอะไร</a></li>
+<li class=""><a href="#4-MO-ถูกขียนไฟล์ที่-Folder-อะไร" title="4. MO ถูกขียนไฟล์ที่ Folder อะไร">4. MO ถูกขียนไฟล์ที่ Folder อะไร</a></li>
+<li class=""><a href="#5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน" title="5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน">5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน</a></li>
+<li><a href="#6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE" title="6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE">6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE</a></li>
+<li><a href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด">7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</a></li>
+<li class=""><a href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator0" title="8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator">8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</a></li>
+<li><a href="#9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด" title="9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด">9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด</a></li>
+<li><a href="#10App-ใดทำหน้าที่ดึงข้อมูลจากไฟล์-DR-เข้า-Database-ข้อมูล-DR-ถูกสร้างเข้าที่ตารางใด" title="10.App ใดทำหน้าที่ดึงข้อมูลจากไฟล์ DR เข้า Database /ข้อมูล DR ถูกสร้างเข้าที่ตารางใด">10.App ใดทำหน้าที่ดึงข้อมูลจากไฟล์ DR เข้า Database /ข้อมูล DR ถูกสร้างเข้าที่ตารางใด</a></li>
+<li class=""><a href="#11-DR-ในตารางถูกนำไป-Update-MT-ด้วย-App-หรือ-Job-ชื่อว่าอะไร--ใช้เงื่อนไขใดในการนำ-DR-ไปอัพเดท-MT--ข้อมูล-MT-หลังจากถูกอัพเดท-DR-เป็นอย่างไร" title="11. DR ในตารางถูกนำไป Update MT ด้วย App หรือ Job ชื่อว่าอะไร / ใช้เงื่อนไขใดในการนำ DR ไปอัพเดท MT / ข้อมูล MT หลังจากถูกอัพเดท DR เป็นอย่างไร">11. DR ในตารางถูกนำไป Update MT ด้วย App หรือ Job ชื่อว่าอะไร / ใช้เงื่อนไขใดในการนำ DR ไปอัพเดท MT / ข้อมูล MT หลังจากถูกอัพเดท DR เป็นอย่างไร</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
