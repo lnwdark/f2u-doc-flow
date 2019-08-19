@@ -265,7 +265,7 @@ MO<span class="hljs-params">|66909507733|</span><span class="hljs-params">|6|</s
    </td>
    </tr>
 </tbody></table><p><img src="https://i.imgur.com/OaVXxNO.png" alt=""></p><div class="alert alert-info">
-<p>jobName  <strong>JOB_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY (Truemove - WAP Charging)</strong> run excute Store <strong>SP_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY</strong><br>
+<p>jobName  <strong>JOB_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY (Truemove - SMS/MMS)</strong> run excute Store <strong>SP_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY</strong><br>
 ดึงข้อมูลจากตาราง <strong>MCP_DEV.dbo.TBMESSAGERECEIVE</strong></p>
 <p>เพื่อเช็คข้อมูลว่าเป็นสมาชิกอยู่ หรือไม่ (เคสนี้เป็นการสมัครด้วย WAP สำเร็จ)สมาชิกจะถูก insert เข้าตาราง <strong>MCP_DEV.dbo.TBSUBSCRIBER</strong> และ gen ข้อความตอบกลับ<br>
 ไปยัง Oprator ที่ตาราง **MCP_DEV.dbo.TBMESSAGEREDUCEQUEUE **โดยเปลี่ยน IDOPERATORHANDLESTATUS = 0 และ Update Mo ที่ตาราง MCP_DEV.dbo.TBMESSAGERECEIVE โดยมี IDHANDLESTATUS = 2</p>
@@ -276,13 +276,13 @@ MO<span class="hljs-params">|66909507733|</span><span class="hljs-params">|6|</s
   </tr>
   <tr>
     <th>Job Name</th>
-   <td>JOB_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY (Truemove - WAP Charging)</td>
+   <td>JOB_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY (Truemove - SMS/MMS)</td>
    </tr>
    <tr>
     <th>Store Name</th>
    <td>SP_INMEM_MOVE_MSGRECEIVE_TO_MSGQUEUE_REDUCE_BY_GATEWAY</td>
    </tr>
-</tbody></table><p><img src="https://i.imgur.com/MJpaCNr.png" alt=""></p><p><img src="https://i.imgur.com/9WJsWUX.png" alt=""></p><h2 id="8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator"><a class="anchor hidden-xs" href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator" title="8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator"><span class="octicon octicon-link"></span></a>8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</h2><blockquote>
+</tbody></table><p><img src="https://i.imgur.com/vKjq4p2.png" alt=""></p><p><img src="https://i.imgur.com/9WJsWUX.png" alt=""></p><h2 id="8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator"><a class="anchor hidden-xs" href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator" title="8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator"><span class="octicon octicon-link"></span></a>8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</h2><blockquote>
 <p>App Task Scheduler</p>
 </blockquote><table>
 <tbody><tr>
@@ -560,8 +560,8 @@ DR|<span class="token number">66909507733</span>||<span class="token number">6</
             <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
                 <div class="toc"><ul class="nav">
 <li class=""><a href="#Flow-การสมัครบริการผ่านช่องทาง-WAP-โดยใช้เบอร์-Truemove-H" title="Flow การสมัครบริการผ่านช่องทาง WAP โดยใช้เบอร์ Truemove-H">Flow การสมัครบริการผ่านช่องทาง WAP โดยใช้เบอร์ Truemove-H</a><ul class="nav">
-<li><a href="#1รูปแบบตัวอย่างการกดสมัคร" title="1.รูปแบบตัวอย่างการกดสมัคร">1.รูปแบบตัวอย่างการกดสมัคร</a></li>
-<li><a href="#2กรณีกดสมัครสำเร็จ" title="2.กรณีกดสมัครสำเร็จ">2.กรณีกดสมัครสำเร็จ</a></li>
+<li class=""><a href="#1รูปแบบตัวอย่างการกดสมัคร" title="1.รูปแบบตัวอย่างการกดสมัคร">1.รูปแบบตัวอย่างการกดสมัคร</a></li>
+<li class=""><a href="#2กรณีกดสมัครสำเร็จ" title="2.กรณีกดสมัครสำเร็จ">2.กรณีกดสมัครสำเร็จ</a></li>
 <li><a href="#3ดู-API-และ-log-การกดสมัคร" title="3.ดู API และ log การกดสมัคร">3.ดู API และ log การกดสมัคร</a><ul class="nav">
 <li><a href="#31-Path-API-ที่สร้างไฟล์-Gen-File-MO" title="3.1 Path  API ที่สร้างไฟล์ Gen File MO">3.1 Path  API ที่สร้างไฟล์ Gen File MO</a></li>
 <li><a href="#32-Path-ที่เก็บไฟล์-log" title="3.2 Path ที่เก็บไฟล์ log">3.2 Path ที่เก็บไฟล์ log</a></li>
@@ -572,7 +572,7 @@ DR|<span class="token number">66909507733</span>||<span class="token number">6</
 <li><a href="#4-MO-ถูกขียนไฟล์ที่-Folder-อะไร" title="4. MO ถูกขียนไฟล์ที่ Folder อะไร">4. MO ถูกขียนไฟล์ที่ Folder อะไร</a></li>
 <li><a href="#5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน" title="5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน">5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน</a></li>
 <li><a href="#6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE" title="6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE">6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE</a></li>
-<li><a href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด">7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</a></li>
+<li class=""><a href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด">7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</a></li>
 <li><a href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator" title="8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator">8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</a></li>
 <li><a href="#9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด" title="9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด">9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด</a><ul class="nav">
 <li><a href="#91-URL-API-ตัวรับ-DR" title="9.1 URL API ตัวรับ DR">9.1 URL API ตัวรับ DR</a></li>
@@ -598,8 +598,8 @@ DR|<span class="token number">66909507733</span>||<span class="token number">6</
     <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;" null null>
         <div class="toc"><ul class="nav">
 <li class=""><a href="#Flow-การสมัครบริการผ่านช่องทาง-WAP-โดยใช้เบอร์-Truemove-H" title="Flow การสมัครบริการผ่านช่องทาง WAP โดยใช้เบอร์ Truemove-H">Flow การสมัครบริการผ่านช่องทาง WAP โดยใช้เบอร์ Truemove-H</a><ul class="nav">
-<li><a href="#1รูปแบบตัวอย่างการกดสมัคร" title="1.รูปแบบตัวอย่างการกดสมัคร">1.รูปแบบตัวอย่างการกดสมัคร</a></li>
-<li><a href="#2กรณีกดสมัครสำเร็จ" title="2.กรณีกดสมัครสำเร็จ">2.กรณีกดสมัครสำเร็จ</a></li>
+<li class=""><a href="#1รูปแบบตัวอย่างการกดสมัคร" title="1.รูปแบบตัวอย่างการกดสมัคร">1.รูปแบบตัวอย่างการกดสมัคร</a></li>
+<li class=""><a href="#2กรณีกดสมัครสำเร็จ" title="2.กรณีกดสมัครสำเร็จ">2.กรณีกดสมัครสำเร็จ</a></li>
 <li><a href="#3ดู-API-และ-log-การกดสมัคร" title="3.ดู API และ log การกดสมัคร">3.ดู API และ log การกดสมัคร</a><ul class="nav">
 <li><a href="#31-Path-API-ที่สร้างไฟล์-Gen-File-MO" title="3.1 Path  API ที่สร้างไฟล์ Gen File MO">3.1 Path  API ที่สร้างไฟล์ Gen File MO</a></li>
 <li><a href="#32-Path-ที่เก็บไฟล์-log" title="3.2 Path ที่เก็บไฟล์ log">3.2 Path ที่เก็บไฟล์ log</a></li>
@@ -610,7 +610,7 @@ DR|<span class="token number">66909507733</span>||<span class="token number">6</
 <li><a href="#4-MO-ถูกขียนไฟล์ที่-Folder-อะไร" title="4. MO ถูกขียนไฟล์ที่ Folder อะไร">4. MO ถูกขียนไฟล์ที่ Folder อะไร</a></li>
 <li><a href="#5-App-ชื่อว่าอะไรมาดูดไฟล์-MO-ไปทำงาน" title="5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน">5. App ชื่อว่าอะไรมาดูดไฟล์ MO ไปทำงาน</a></li>
 <li><a href="#6มี-JOB-ใดที่ดึงข้อมูล-MO-จากตาราง-MCP_DEVdboTempImportMoTransactionQueue-เพื่อไป-insert-เข้าที่ตาราง-TBMESSAGERECEIVE" title="6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE">6.มี JOB ใดที่ดึงข้อมูล MO จากตาราง MCP_DEV.dbo.TempImportMoTransactionQueue เพื่อไป insert เข้าที่ตาราง TBMESSAGERECEIVE</a></li>
-<li><a href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด">7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</a></li>
+<li class=""><a href="#7-แล้วมี-JOB-ใดดึงข้อมูล-MO-ไปประมวลผลเพื่อสร้างเป็น-MT-และมีการสร้างสมาชิกใหม่หรือไม่-หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด" title="7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด">7. แล้วมี JOB ใดดึงข้อมูล MO ไปประมวลผลเพื่อสร้างเป็น MT และมีการสร้างสมาชิกใหม่หรือไม่ หากมีการสร้างสมาชิกใหม่จะถูกสร้างที่ตารางใด</a></li>
 <li><a href="#8มี-App-ใดที่ดึงข้อมูล-MT-ส่งออกไปให้กับ-Operator" title="8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator">8.มี App ใดที่ดึงข้อมูล MT ส่งออกไปให้กับ Operator</a></li>
 <li><a href="#9-Operator-มีการส่ง-DR-มาให้-Future2you-หรือไม่-หากมีการส่งมา-API-ใดเป็นตัวรับ-DR-นั้น--URL-API-ตัวรับ-DR-คืออะไร--Path-API-อยู่ที่ใด--Log-อยู่ที่ใด--Log-มีข้อมูลอย่างไร-DR-ถูกสร้างไปไว้ที่ใด" title="9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด">9. Operator มีการส่ง DR มาให้ Future2you หรือไม่ หากมีการส่งมา API ใดเป็นตัวรับ DR นั้น / URL API ตัวรับ DR คืออะไร / Path API อยู่ที่ใด / Log อยู่ที่ใด / Log มีข้อมูลอย่างไร/ DR ถูกสร้างไปไว้ที่ใด</a><ul class="nav">
 <li><a href="#91-URL-API-ตัวรับ-DR" title="9.1 URL API ตัวรับ DR">9.1 URL API ตัวรับ DR</a></li>
